@@ -1,6 +1,16 @@
-name: ExamplePlugin
+name: LicenseManager
 api-version: 1.16
 authors:
-  - Me
-main: com.example.exampleplugin
+  - AsMax
+main: me.asmax.licensemanager.LicenseManager
 version: @version@
+
+commands:
+   installkey:
+   key:
+   setservername:
+   servername:
+   forward:
+   validate:
+   togglenotifications:
+   activatelite:

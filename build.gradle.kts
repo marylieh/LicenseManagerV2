@@ -9,7 +9,7 @@ plugins {
     id("com.github.gmazzo.buildconfig") version "3.0.0"
 }
 
-group = "org.example"
+group = "me.asmax"
 version = "1.0.0"
 
 repositories {
@@ -26,6 +26,8 @@ dependencies {
     // Examples
     // implementation("io.ktor", "ktor-client", "1.4.0") // Would be shaded into the final jar
     // compileOnly("io.ktor", "ktor-client", "1.4.0") // Only used on compile time
+
+    implementation("org.mongodb", "mongo-java-driver", "3.12.10")
 }
 
 buildConfig {
