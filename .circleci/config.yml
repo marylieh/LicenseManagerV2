@@ -51,6 +51,3 @@ jobs:
 
       - store_artifacts:
               path: ~/repo/build/libs
-
-      - store_artifacts:
-              path: ~/repo/artifacts
