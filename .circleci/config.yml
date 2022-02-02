@@ -53,7 +53,7 @@ jobs:
             echo "Artifact files" > ~/repo/artifacts/artifact-2;
 
       - store_artifacts:
-              path: ~/repo/artifact-1
+              path: ~/repo/build/libs
               destination: artifact-file
 
       - store_artifacts:
