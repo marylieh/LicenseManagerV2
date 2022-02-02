@@ -47,14 +47,10 @@ jobs:
       
       - run: 
           name: Creating Artifacts
-          command: |
-            echo "LicenseManager" > ~/repo/artifact-1;
-            mkdir ~/repo/artifacts;
-            echo "Artifact files" > ~/repo/artifacts/artifact-2;
+          command: gradle build
 
       - store_artifacts:
               path: ~/repo/build/libs
-              destination: artifact-file
 
       - store_artifacts:
               path: ~/repo/artifacts
