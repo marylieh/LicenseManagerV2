@@ -2,6 +2,10 @@
 
 This is the second version from the license management tool. It's now programmed in Kotlin and uses Gradle as it's build system.
 
+[![CircleCI](https://circleci.com/gh/asmax15/LicenseManagerV2/tree/main.svg?style=shield)](https://circleci.com/gh/asmax15/LicenseManagerV2/tree/main)
+
+The latest Artifacts can be downloaded via circle ci.
+
 ## Commands
 * `/installkey <Key>` - *Installs a new License Key to the system*
 * `/key` - *Displays the current installed key*
