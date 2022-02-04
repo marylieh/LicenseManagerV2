@@ -10,7 +10,7 @@ object MongoManager {
 
     private lateinit var collection: MongoCollection<Document>
 
-    fun getMongoURL(): String {
+    private fun getMongoURL(): String {
 
         if (Config.getConfig().getString("Mongo.URL") == null) {
             Config.getConfig().set("Mongo.URL", "insertMongoURLHere")
@@ -19,7 +19,7 @@ object MongoManager {
         return Config.getConfig().getString("Mongo.URL")!!
     }
 
-    fun getDatabaseString(): String {
+    private fun getDatabaseString(): String {
 
         if (Config.getConfig().getString("Mongo.Database") == null) {
             Config.getConfig().set("Mongo.Database", "insertMongoDatabaseNameHere")
@@ -29,12 +29,12 @@ object MongoManager {
     }
 
     fun connect(collectionName: String) {
-        var url = getMongoURL()
+        val url = getMongoURL()
 
-        var clientURL = MongoClientURI(url)
-        var mongoClient = MongoClient(clientURL)
+        val clientURL = MongoClientURI(url)
+        val mongoClient = MongoClient(clientURL)
 
-        var mongoDatabase = mongoClient.getDatabase(getDatabaseString())
+        val mongoDatabase = mongoClient.getDatabase(getDatabaseString())
         collection = mongoDatabase.getCollection(collectionName)
 
         println("Database connected successfully.")
@@ -44,19 +44,4 @@ object MongoManager {
         return collection.find(search).first()
     }
 
-    fun deleteDocument(document: Document) {
-        collection.deleteOne(document)
-    }
-
-    fun updateDocument(document: Document, key: String, value: Any) {
-
-        var updatedValue = Document(key, value)
-        var updateOperation = Document("\$set", updatedValue)
-
-        collection.updateOne(document, updateOperation)
-    }
-
-    fun createDocument(document: Document) {
-        collection.insertOne(document)
-    }
 }

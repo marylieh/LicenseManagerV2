@@ -22,7 +22,7 @@ class LicenseManager : JavaPlugin() {
 
     override fun onLoad() {
         instance = this
-        Config.Config()
+        Config.config()
     }
 
     override fun onEnable() {

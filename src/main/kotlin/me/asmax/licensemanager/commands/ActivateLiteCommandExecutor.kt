@@ -15,7 +15,7 @@ class ActivateLiteCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (!player.hasPermission("License.lite.activate")) {
             player.sendMessage(LicenseManager.instance.unknown)

@@ -14,7 +14,7 @@ class SetServerNameCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (!player.hasPermission("License.name.change")) {
             player.sendMessage(LicenseManager.instance.unknown)

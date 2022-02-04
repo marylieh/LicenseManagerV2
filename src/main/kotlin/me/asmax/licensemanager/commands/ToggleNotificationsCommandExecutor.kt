@@ -13,7 +13,7 @@ class ToggleNotificationsCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (player.hasPermission("license.notifications.toggle")) {
 

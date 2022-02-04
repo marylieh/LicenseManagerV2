@@ -14,7 +14,7 @@ class KeyCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (!player.hasPermission("License.key.show")) {
             player.sendMessage(LicenseManager.instance.unknown)
@@ -27,7 +27,7 @@ class KeyCommandExecutor: CommandExecutor {
             return true
         }
 
-        var key = Config.getConfig().getString("License.Key")
+        val key = Config.getConfig().getString("License.Key")
 
         player.sendMessage("${LicenseManager.instance.prefix} Current installed License Key -> $key")
         return true

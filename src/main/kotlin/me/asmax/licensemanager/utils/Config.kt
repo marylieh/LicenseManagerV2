@@ -1,6 +1,5 @@
 package me.asmax.licensemanager.utils
 
-import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration
 import java.io.File
 import java.io.IOException
@@ -10,8 +9,8 @@ object Config {
     private lateinit var file: File
     private lateinit var config: YamlConfiguration
 
-    fun Config() {
-        var dir: File = File("./plugins/LicenseManager")
+    fun config() {
+        val dir = File("./plugins/LicenseManager")
 
         if (!dir.exists()) {
             dir.mkdirs()
@@ -42,13 +41,4 @@ object Config {
         }
     }
 
-    fun reload() {
-        try {
-            config.load(file)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } catch (e: InvalidConfigurationException) {
-            e.printStackTrace()
-        }
-    }
 }

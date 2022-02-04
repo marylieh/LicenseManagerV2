@@ -13,7 +13,7 @@ class JoinListener: Listener {
 
     @EventHandler
     fun onJoin(event: PlayerJoinEvent) {
-        var player: Player = event.player
+        val player: Player = event.player
 
         if (Config.getConfig().getBoolean("License.Verified")) {
             GameStateManager.liteVersion = false

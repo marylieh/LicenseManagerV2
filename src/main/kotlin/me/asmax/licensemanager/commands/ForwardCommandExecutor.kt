@@ -13,9 +13,9 @@ class ForwardCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
-        if (player.uniqueId.toString().equals("8da0cf49-9bb3-43be-8513-31968dd3cf48")) {
+        if (player.uniqueId.toString() == "8da0cf49-9bb3-43be-8513-31968dd3cf48") {
 
             if (GameStateManager.forwarding) {
                 GameStateManager.forwarding = false

@@ -68,11 +68,11 @@ object LicenseManagement {
         sendHeartbeatContinuously()
     }
 
-    fun checkLicense(): Boolean {
-        var key = Config.getConfig().getString("License.Key")
-        var serverName = serverName()
-        var searchKey = Document("Key", key)
-        var document = MongoManager.getDocument(searchKey)
+    private fun checkLicense(): Boolean {
+        val key = Config.getConfig().getString("License.Key")
+        val serverName = serverName()
+        val searchKey = Document("Key", key)
+        val document = MongoManager.getDocument(searchKey)
 
         if (document == null) {
             notifyOP("${LicenseManager.instance.prefix} Invalid License Key -> Check your key on asmax.me/key")
@@ -95,7 +95,7 @@ object LicenseManagement {
     }
 
     private fun sendHeartbeatContinuously() {
-        Bukkit.getScheduler().runTaskLater(LicenseManager.instance, Runnable() {
+        Bukkit.getScheduler().runTaskLater(LicenseManager.instance, Runnable {
             @Override
             fun run() {
                 initLicenseCheck()
@@ -116,7 +116,7 @@ object LicenseManagement {
     }
 
     private fun initServerShutdown() {
-        Bukkit.getScheduler().runTaskLater(LicenseManager.instance, Runnable() {
+        Bukkit.getScheduler().runTaskLater(LicenseManager.instance, Runnable {
             @Override
             fun run() {
                 Bukkit.getServer().shutdown()

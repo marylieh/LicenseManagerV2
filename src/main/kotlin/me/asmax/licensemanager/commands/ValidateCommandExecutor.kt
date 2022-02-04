@@ -13,7 +13,7 @@ class ValidateCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (!player.hasPermission("License.validate")) {
             player.sendMessage(LicenseManager.instance.unknown)
@@ -25,7 +25,7 @@ class ValidateCommandExecutor: CommandExecutor {
             return true
         }
 
-        var valid = Config.getConfig().getBoolean("License.Verified")
+        val valid = Config.getConfig().getBoolean("License.Verified")
 
         if (valid) {
             player.sendMessage("${LicenseManager.instance.prefix} §aYour License is §2§ovalid§a! §6You have the Pro version.")

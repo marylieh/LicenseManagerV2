@@ -15,7 +15,7 @@ class InstallKeyCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (!player.hasPermission("License.key.install")) {
             player.sendMessage(LicenseManager.instance.unknown)

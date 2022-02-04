@@ -14,7 +14,7 @@ class ServerNameCommandExecutor: CommandExecutor {
         if (sender !is Player) {
             return true
         }
-        var player: Player = sender
+        val player: Player = sender
 
         if (!player.hasPermission("License.name.show")) {
             player.sendMessage(LicenseManager.instance.unknown)
@@ -27,7 +27,7 @@ class ServerNameCommandExecutor: CommandExecutor {
             return true
         }
 
-        var serverName = Config.getConfig().getString("License.ServerName")
+        val serverName = Config.getConfig().getString("License.ServerName")
 
         player.sendMessage("${LicenseManager.instance.prefix} Current installed ServerName -> $serverName")
         return true
