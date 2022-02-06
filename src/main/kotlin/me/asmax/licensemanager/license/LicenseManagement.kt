@@ -96,10 +96,7 @@ object LicenseManagement {
 
     private fun sendHeartbeatContinuously() {
         Bukkit.getScheduler().runTaskLater(LicenseManager.instance, Runnable {
-            @Override
-            fun run() {
-                initLicenseCheck()
-            }
+             kotlin.run { initLicenseCheck() }
         }, 100)
     }
 
@@ -117,10 +114,7 @@ object LicenseManagement {
 
     private fun initServerShutdown() {
         Bukkit.getScheduler().runTaskLater(LicenseManager.instance, Runnable {
-            @Override
-            fun run() {
-                Bukkit.getServer().shutdown()
-            }
+            kotlin.run { Bukkit.getServer().shutdown() }
         }, 6000)
     }
 }
